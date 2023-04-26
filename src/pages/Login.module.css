@@ -1,0 +1,121 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:gray;
+}
+.main{
+    position: relative;
+    width: 380px;
+    height:500px;
+    background: white;
+    border-radius: 18px;
+   
+
+  
+   
+}
+.container img{
+    margin-left: 10rem;
+    margin-top: 2rem;
+}
+.container h4{
+    margin-left: 8rem;
+    margin-top: 2rem;
+}
+ .google{
+    border-radius: 10px;
+    width: 95%;
+    margin-left: 10px;
+    margin-top: 20px;
+     height: 7vh; 
+     font-size: 15px;
+    cursor: pointer;
+} 
+.apple{
+    border-radius: 10px;
+    width: 95%;
+    margin-left: 10px;
+    margin-top: 20px;
+     height: 7vh; 
+     font-size: 15px;
+    cursor: pointer;
+
+}
+.Formfiled{
+    text-align: center;  
+}
+input[type=text]{
+    width: 95%;
+    border-radius:10px ;
+    font-size: 15px;
+    height: 7vh; 
+}
+.move{
+    border-radius: 10px;
+    width: 95%;
+    margin-left: 10px;
+    margin-top: 20px;
+     height: 7vh; 
+     font-size: 15px;
+    cursor: pointer;
+
+}
+.pass{
+border-radius: 10px;
+width: 95%;
+margin-left: 10px;
+margin-top: 20px;
+ height: 7vh; 
+ font-size: 15px;
+cursor: pointer;
+}
+span{
+    margin-left:10px;
+    text-align: center;
+    text-decoration: underline;
+   padding: 20px;
+}
+p{
+    text-align: center;
+    margin-top: 5px; 
+}
+.anotherPage{
+border-radius: 10px;
+width: 95%;
+margin-left: 10px;
+margin-top:10rem;
+ height: 7vh; 
+ font-size: 15px;
+cursor: pointer;
+
+}
+.email{
+border-radius: 10px;
+width: 95%;
+margin-left: 20px; 
+height: 10vh; 
+font-size: 15px; 
+cursor: pointer; 
+gap: 20px;
+}
+h2{
+    text-align: center;
+    margin-top: 20px;
+}
+.anotherpaas{
+border-radius: 20px;
+width: 95%;
+height: 10vh; 
+ font-size: 15px;
+cursor: pointer;
+background-color: whitesmoke;
+
+}
