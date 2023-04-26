@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaApple } from 'react-icons/fa';
 import {FcGoogle,} from "react-icons/fc";
 import TextField from '@mui/material/TextField';
-import  Log from  '../Login.module.css'
+import  Log from  './Login.module.css'
 
 export default function Login() {
   const [Logindata, setLogindata] = useState('');
@@ -21,6 +21,7 @@ export default function Login() {
   console.log(userList)
 
   return (
+    <div className={Log.body1}>
     <div className={Log.main} >
       <div className={Log.container}>
         <img
@@ -39,7 +40,7 @@ export default function Login() {
               <FaApple /> Sign In with Apple
             </button>
             <br />
-           <p>________________or__________________</p> 
+           <p className={Log.para}>________________or__________________</p> 
             <br />
             <form onSubmit={handleSubmit} className={Log.Formfiled}>
               <input
@@ -58,7 +59,7 @@ export default function Login() {
           </>
         ) : (
          <>
-         <h2>Enter Your Paasword</h2>
+         <h2 className={Log.heading}> Enter Your Paasword</h2>
          <TextField className={Log.email}
                 disabled
                 id='outlined-disabled'
@@ -80,8 +81,9 @@ export default function Login() {
          </>
         )}
         <br />
-        <span>Do you have an account? Sign Up</span>
+        <span className={Log.span1}>Do you have an account? Sign Up</span>
       </div>
+    </div>
     </div>
   );
 }

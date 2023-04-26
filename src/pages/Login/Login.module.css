@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
-body{
+.body1{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,14 +13,10 @@ body{
 }
 .main{
     position: relative;
-    width: 380px;
-    height:500px;
+    width: 500px;
+    height:550px;
     background: white;
-    border-radius: 18px;
-   
-
-  
-   
+    border-radius: 18px;   
 }
 .container img{
     margin-left: 10rem;
@@ -77,13 +73,13 @@ margin-top: 20px;
  font-size: 15px;
 cursor: pointer;
 }
-span{
-    margin-left:10px;
+.span1{
+    margin-left:5rem;
     text-align: center;
     text-decoration: underline;
    padding: 20px;
 }
-p{
+.para{
     text-align: center;
     margin-top: 5px; 
 }
@@ -106,7 +102,7 @@ font-size: 15px;
 cursor: pointer; 
 gap: 20px;
 }
-h2{
+.heading{
     text-align: center;
     margin-top: 20px;
 }
@@ -117,5 +113,4 @@ height: 10vh;
  font-size: 15px;
 cursor: pointer;
 background-color: whitesmoke;
-
 }
