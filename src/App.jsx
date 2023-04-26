@@ -13,12 +13,12 @@ function App() {
   return (
     <>
       <div className='main_background' >
-      <Landing />
+      {/* <Landing /> */}
        <Login/>
-      <SideNavbar />
-        <SignUp/>
+      {/* <SideNavbar /> */}
+        {/* <SignUp/> */}
     </div>
-    <LandingFooter/>
+    {/* <LandingFooter/> */}
 
 
     </>

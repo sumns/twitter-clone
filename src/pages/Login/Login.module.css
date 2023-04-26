@@ -3,13 +3,15 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: sans-serif;
+   
 }
 .body1{
+    background-color: gray;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background:gray;
+    height:100vh;
+    width: 100%;   
 }
 .main{
     position: relative;
@@ -19,14 +21,18 @@
     border-radius: 18px;   
 }
 .container img{
-    margin-left: 10rem;
+    margin-left:15rem;
     margin-top: 2rem;
 }
 .container h4{
-    margin-left: 8rem;
+    margin-left:12rem;
     margin-top: 2rem;
+    font-size: 20px;
 }
  .google{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 10px;
     width: 95%;
     margin-left: 10px;
@@ -36,6 +42,9 @@
     cursor: pointer;
 } 
 .apple{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 10px;
     width: 95%;
     margin-left: 10px;
@@ -48,7 +57,7 @@
 .Formfiled{
     text-align: center;  
 }
-input[type=text]{
+.text{
     width: 95%;
     border-radius:10px ;
     font-size: 15px;
@@ -82,6 +91,7 @@ cursor: pointer;
 .para{
     text-align: center;
     margin-top: 5px; 
+    cursor: pointer;
 }
 .anotherPage{
 border-radius: 10px;
@@ -91,6 +101,8 @@ margin-top:10rem;
  height: 7vh; 
  font-size: 15px;
 cursor: pointer;
+background-color: black;
+color: whitesmoke;
 
 }
 .email{
@@ -112,5 +124,5 @@ width: 95%;
 height: 10vh; 
  font-size: 15px;
 cursor: pointer;
-background-color: whitesmoke;
+
 }
