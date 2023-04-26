@@ -1,0 +1,126 @@
+.landing_background{
+    display: flex;
+    padding-top: 10px;
+}
+
+.landing_sidebar{
+    width: 20%;
+}
+.landing_sidebar > div:nth-child(1){
+    margin-bottom: 20px;
+}
+.landing_sidebar > div > p{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.landing_sidebar > div > p > span{
+    margin-left: 20px;
+}
+
+
+.landing_feed{
+    width: 48%;
+    /* position: relative; */
+
+    padding: 0 20px;
+    border-left:  1px solid rgb(205, 205, 205);
+    border-right:  1px solid rgb(205, 205, 205);
+}
+.landing_feed nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px ;
+    background-color: rgba(255, 255, 255, 0.833);
+
+    position: sticky;
+    top: 0;
+}
+.landing_feed > div{
+    display: flex;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(216, 216, 216, 0.717);
+    margin-bottom: 20px;
+}
+.landing_feed > div > div{
+    margin-right: 10px;
+}
+
+.feed_content > div:nth-child(1){
+    display: flex;
+    justify-content: space-between;
+}
+.feed_content > div:nth-child(3){
+    height: 60vh;
+    width: 100%;
+
+    margin: 20px 0;
+}
+.feed_content > div:nth-child(3) > img {
+    height: 100%;
+    width: 100%;
+
+    border-radius: 23px;
+}
+.feed_content > div:nth-child(4){
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.landing_widget{
+    width: 32%;
+    padding: 0 30px;
+}
+.landing_widget > div{
+    border: 1px solid rgb(205, 205, 205);
+    border-radius: 13px;
+    padding: 12px 20px;
+}
+.landing_widget > div > p{
+    font-size: 13px;
+    margin-top: 5px;
+}
+.landing_widget > div > p > span{
+    color: rgb(29, 155, 240);
+}
+.landing_widget > div > p > span:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+.landing_footer{
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+
+    background-color: rgb(29, 155, 240) ;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    padding: 10px 0;
+}
+.landing_footer > div{
+    color: white;
+}
+.landing_footer > div > button{
+    outline: none;
+    border: none;
+
+    border: 1px solid white;
+    border-radius: 23px;
+    font-weight: bold;
+    font-size: 15px;
+
+    padding: 10px 20px;
+    margin-left: 20px;
+}
+.landing_footer > div > button:nth-child(1){
+    background: transparent;
+    color: white;
+}
