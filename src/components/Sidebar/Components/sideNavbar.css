@@ -1,0 +1,16 @@
+.sidebar{
+    border-right: 1px solid #e6ecf0;
+    flex: 0.3;
+    min-width: 250px;
+    margin-left: 20px;
+    margin-right: 0px;
+    
+}
+
+
+.sidebar_twitterIcon{
+    color: #50b7f5;
+    font-size: 30px  !important;    
+    margin: 10px 20px;
+    margin-bottom: 20px;
+}
