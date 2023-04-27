@@ -4,6 +4,7 @@ import Feeds from '../../components/Feeds/Feeds'
 
 export default function Home() {
   return (
+
     <div className='home_main_container'>
 
       {/* TOPBAR of Home page */}
