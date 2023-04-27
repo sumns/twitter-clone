@@ -1,9 +1,12 @@
-.app{
-    height: 100vh;
-    display: flex;
-    width: 82%;
-    margin: auto;
-    /* margin-right: auto; */
-    padding: 0 10px;
-    
+
+
+.main_background{
+  min-height: 100vh;
+  display: flex;
+  width: 82%;
+  margin: auto;
+   padding: 0 10px;
+  position: relative;
 }
+
+
