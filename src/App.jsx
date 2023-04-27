@@ -1,16 +1,20 @@
 
 import './App.css'
-import Landing, {LandingFooter} from './pages/Landing/Landing'
+import Home from './pages/Home/Home'
+import Landing, { LandingFooter } from './pages/Landing/Landing'
 
 function App() {
 
   return (
     <>
-      <div className='main_background' >
+      {/* <div className='main_background' >
       <Landing />
       
-    </div>
-    <LandingFooter/>
+      </div>
+      <LandingFooter/> */}
+
+      <Home/>
+
     </>
   )
 }
