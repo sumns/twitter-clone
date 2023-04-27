@@ -1,8 +1,12 @@
 
 
 .main_background{
+  min-height: 100vh;
+  display: flex;
   width: 82%;
   margin: auto;
+
+  position: relative;
 }
 
 

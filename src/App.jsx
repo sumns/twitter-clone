@@ -13,14 +13,16 @@ function App() {
     <>
 
       <div className='main_background' >
+        <Home />
+        <RigthSide />
         {/* <Landing />
         <Login />
         <SideNavbar />
         <SignUp /> */}
       </div>
       {/* <LandingFooter /> */}
-      <RigthSide/>
-        <Home/>
+
+
 
     </>
   );

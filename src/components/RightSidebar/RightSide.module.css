@@ -32,9 +32,10 @@ list-style: none;
 .start {
     display: flex;
     /* justify-content: center; */
-    width:100%;
+    width:32%;
     height: 100vh;
-    
+    position: fixed;
+    right: 0;
   }
   
   .firstcontainer {
@@ -48,7 +49,7 @@ list-style: none;
     font-size: 18px;
     font-weight: bold;
     margin-left: 10px;
-    width: 32%;
+    /* width: 32%; */
   }
   
   .firstComp {
