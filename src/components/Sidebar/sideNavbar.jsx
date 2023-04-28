@@ -28,8 +28,9 @@ export default function SideNavbar() {
   };
   return (
     <div className='sidebar'>
-
-        <TwitterIcon 
+      <div>
+        
+      <TwitterIcon 
           className='sidebar_twitterIcon'
         />
         
@@ -73,6 +74,8 @@ export default function SideNavbar() {
       {
         open ? <TweetDialogue  open = {open} handleClose={handleClose}/> : ""
       }
+    </div>
+
     </div>
   )
 }

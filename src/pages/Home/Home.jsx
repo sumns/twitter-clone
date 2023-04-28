@@ -10,7 +10,7 @@ export default function Home() {
 
       {/* TOPBAR of Home page */}
       <section className='home_topbar_section'>
-        <h3>Home</h3>
+        <h2>Home</h2>
         <div className='home_topbar_innerDiv' >
           <div><span>For you</span></div>
           <div><span>Following</span></div>
