@@ -13,8 +13,19 @@ import Button from '@mui/material/Button'
 
 import SidebarOptions from './SidebarOptions';
 
+import TweetDialogue from './TweetDialogue'
+
 
 export default function SideNavbar() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <div className='sidebar'>
 
@@ -58,7 +69,10 @@ export default function SideNavbar() {
 
 
       {/* <button>Tweet</button> */}
-      <Button className='sidebar_tweet' variant="outlined"  >Tweet</Button>
+      <Button className='sidebar_tweet' variant="outlined" onClick={handleClickOpen}>Tweet</Button>
+      {
+        open ? <TweetDialogue  open = {open} handleClose={handleClose}/> : ""
+      }
     </div>
   )
 }
