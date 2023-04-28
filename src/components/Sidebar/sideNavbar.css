@@ -5,6 +5,12 @@
     margin-left: 20px;
     margin-right: 0px;
     
+    min-height: 100vh;
+    position: relative;
+}
+
+.sidebar > div{
+    position: fixed;
 }
 
 

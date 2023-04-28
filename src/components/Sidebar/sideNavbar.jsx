@@ -17,8 +17,9 @@ import SidebarOptions from './SidebarOptions';
 export default function SideNavbar() {
   return (
     <div className='sidebar'>
-
-        <TwitterIcon 
+      <div>
+        
+      <TwitterIcon 
           className='sidebar_twitterIcon'
         />
         
@@ -59,6 +60,7 @@ export default function SideNavbar() {
 
       {/* <button>Tweet</button> */}
       <Button className='sidebar_tweet' variant="outlined">Tweet</Button>
+      </div>
     </div>
   )
 }
