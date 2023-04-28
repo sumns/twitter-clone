@@ -12,7 +12,7 @@ export default function SearchAppBar() {
             color: '#aaa',
           }}/><input type="text" placeholder='Search' value={inputfield} onChange={(e)=>setInputField(e.target.value)} style={{
             paddingLeft: '30px', 
-            width: '190px', 
+            width: '100%', 
             border:"none",
           }} />
       </div>
