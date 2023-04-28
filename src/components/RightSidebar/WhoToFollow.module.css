@@ -1,0 +1,37 @@
+.FirstConatiner {
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+  
+.userDataPart {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+.userDataPart > div {
+    width: 33.33%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+.userDataPart ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  .userDataPart img {
+    border-radius: 50%;
+  }
+.userDataPart li {
+    margin-bottom: 5px;
+  }
+  
+.userDataPart button {
+    background-color: #1da1f2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  

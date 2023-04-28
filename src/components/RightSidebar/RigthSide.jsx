@@ -2,6 +2,8 @@ import React from 'react';
 import Right from './RightSide.module.css';
 import SearchBar from './SearchBar';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import WhoToFollow from './WhoToFollow';
+import Heading from './Heading';
 export default function RigthSide() {
   const data = [
     {
@@ -27,12 +29,13 @@ export default function RigthSide() {
   ];
 
   return (
+
     <div className={Right.start}>
       <div>
         <SearchBar />
         <section className={Right.firstComp}>
           <div className={Right.firstcontainer}>
-            <h2>What's Happening</h2>
+            <Heading/>
           </div>
           <div className={Right.datapart}>
             {data.map((wid, ind) => (
@@ -49,6 +52,9 @@ export default function RigthSide() {
             <button> Show more</button>
           </div>
         </section>
+        <div>
+        <WhoToFollow/>
+        </div>
       </div>
     </div>
   );

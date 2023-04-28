@@ -6,11 +6,12 @@ export default function SearchAppBar() {
     <div>
       <div>
       <FaSistrix style={{
-            position: 'absolute',
+            position:'absolute',
             top: '2px',
             left: '10px',
             color: '#aaa',
-          }}/><input type="text" placeholder='Search' value={inputfield} onChange={(e)=>setInputField(e.target.value)} style={{
+          }}/>
+          <input type="text" placeholder='Search' value={inputfield} onChange={(e)=>setInputField(e.target.value)} style={{
             paddingLeft: '30px', 
             width: '100%', 
             border:"none",
