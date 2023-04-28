@@ -9,6 +9,7 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import ContactEmergencyIcon from '@mui/icons-material/ContactEmergency';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import Button from '@mui/material/Button'
 
 import SidebarOptions from './SidebarOptions';
 
@@ -16,10 +17,12 @@ import SidebarOptions from './SidebarOptions';
 export default function SideNavbar() {
   return (
     <div className='sidebar'>
-
-        <TwitterIcon 
+      <div>
+        
+      <TwitterIcon 
           className='sidebar_twitterIcon'
         />
+        
 
         <SidebarOptions 
           Icon={HomeIcon}
@@ -53,7 +56,11 @@ export default function SideNavbar() {
           Icon={MoreHorizIcon}
           text = "More"
         />
+
+
       {/* <button>Tweet</button> */}
+      <Button className='sidebar_tweet' variant="outlined">Tweet</Button>
+      </div>
     </div>
   )
 }
