@@ -1,0 +1,22 @@
+.formContainer{
+  height: calc(65vh-1em);
+  width: 100%;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  margin-left: "1.5em";
+  
+  
+}
+.dobContainer{
+  width: 88%;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+.header{
+  margin-top: 5rem;
+  margin-left:3rem;
+}
+

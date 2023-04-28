@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaApple } from 'react-icons/fa';
 import {FcGoogle,} from "react-icons/fc";
 import TextField from '@mui/material/TextField';
-import  Log from  '../Login.module.css'
+import  Log from  './Login.module.css'
 
 export default function Login() {
   const [Logindata, setLogindata] = useState('');
