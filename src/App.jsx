@@ -21,10 +21,10 @@ function App() {
         <SideNavbar />
         <Home />
         <RigthSide />
-        {/* <Landing />
-        <Login />
-        <SideNavbar />
-        <SignUp /> */}
+        {/* <Landing /> */}
+        {/* <Login /> */}
+
+        {/* <SignUp /> */}
       </div>
       {/* <LandingFooter /> */}
 
