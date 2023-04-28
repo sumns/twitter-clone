@@ -1,6 +1,5 @@
 
 import React from 'react'
-
 import './App.css'
 import SideNavbar from './components/Sidebar/sideNavbar'
 
@@ -24,10 +23,9 @@ function App() {
         <SideNavbar />
         <Home />
         <RigthSide />
-        {/* <Landing />
-        <Login />
-        <SideNavbar />
-        <SignUp /> */}
+        {/* <Login />
+        <SideNavbar /> */}
+        {/* <SignUp /> */}
       </div>
       {/* <LandingFooter /> */}
 
