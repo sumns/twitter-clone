@@ -26,8 +26,8 @@
 textarea::-webkit-scrollbar{
     display: none;
 }
-textarea::placeholder {
-    color: tomato;
+.tweetBox_input > textarea::placeholder {
+    color: #1c3242;
     font-size: 1.2em;
     font-style: italic;
     

@@ -1,7 +1,7 @@
 import React from 'react'
 import './Home.css'
 import Feeds from '../../components/Feeds/Feeds'
-import TweetBox from '../../components/Sidebar/TweetBox'
+import TweetBox from "../../components/Sidebar/TweetBox"
 
 export default function Home() {
   return (
@@ -16,9 +16,7 @@ export default function Home() {
           <div><span>Following</span></div>
         </div>
       </section>
-
       <TweetBox />
-
       <Feeds/>
 
     </div>
