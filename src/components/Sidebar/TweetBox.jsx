@@ -1,5 +1,4 @@
 import React from 'react'
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import "./TweetBox.css"
 import { Button } from '@mui/base';
 function TweetBox() {
@@ -9,7 +8,7 @@ function TweetBox() {
             <div className='tweetBox_input'>
                  <img src="https://img.freepik.com/premium-vector/businessman-avatar-cartoon-character-profile_18591-50581.jpg"  />
 
-                <input type="text"
+                <textarea type="text"
                     className='tweetBox_imageInput'
                     placeholder="What's happenig?"
                 />

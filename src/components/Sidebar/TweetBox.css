@@ -1,7 +1,7 @@
 .tweetBox{
-    padding-bottom: 10px;
-    border-bottom: 8px solid #50b7f5;
-    padding-right: 10px;
+    /* padding-bottom: 10px; */
+    border-bottom: 1px solid gray;
+    /* padding-right: 10px; */
 }
 
 .tweetBox > form {
@@ -15,12 +15,24 @@
     align-items: center;
 }
 
-.tweetBox_input > input {
+.tweetBox_input > textarea {
     margin-left: 20px;
     font-size: 20px;
     border: none;
     outline: none;
+    width: 100%;
 }
+
+textarea::-webkit-scrollbar{
+    display: none;
+}
+.tweetBox_input > textarea::placeholder {
+    color: #1c3242;
+    font-size: 1.2em;
+    font-style: italic;
+    
+   
+  }
 
 .tweetBox_tweetButton{
     background-color: #50b7f5 !important;
