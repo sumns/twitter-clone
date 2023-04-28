@@ -1,8 +1,6 @@
 import React, {useState} from 'react'
 import './Feeds.css'
-
 import { TweetsData } from '../../utils/TweetsData';
-
 import Avatar from '@mui/material/Avatar';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';

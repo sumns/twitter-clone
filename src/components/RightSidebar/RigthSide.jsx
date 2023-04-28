@@ -2,7 +2,6 @@ import React from 'react';
 import Right from './RightSide.module.css';
 import SearchBar from './SearchBar';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-
 export default function RigthSide() {
   const data = [
     {
@@ -42,7 +41,6 @@ export default function RigthSide() {
                   <li style={{display:"flex", justifyContent:"space-between" ,alignItems:"center"}}><span>{wid.Trending}</span><p><MoreHorizIcon/></p></li>
                   <li>{wid.name}</li>
                   <li>{wid.Tweets}</li> 
-                         
                 </ul>
               </div>
             ))}
