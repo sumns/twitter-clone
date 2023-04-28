@@ -58,7 +58,7 @@ export default function SideNavbar() {
 
 
       {/* <button>Tweet</button> */}
-      <Button className='sidebar_tweet' variant="outlined">Tweet</Button>
+      <Button className='sidebar_tweet' variant="outlined"  >Tweet</Button>
     </div>
   )
 }
