@@ -1,9 +1,7 @@
-import * as React from 'react';
-
+import React, {useState}  from 'react';
 import { FaSistrix } from "react-icons/fa";
-
 export default function SearchAppBar() {
-  const[inputfield,setInputField]=React.useState('')
+  const[inputfield,setInputField]=useState('')
   return (
     <div>
       <div>
