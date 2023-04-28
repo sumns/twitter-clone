@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './Home.css'
 import Feeds from '../../components/Feeds/Feeds'
-import TweetBox from '../../components/Sidebar/TweetBox'
+import TweetBox from "../../components/Sidebar/TweetBox"
 
 export default function Home() {
 
@@ -19,10 +19,10 @@ export default function Home() {
           <div onClick={()=> setShowHome(false)} ><span style={{ borderBottom: showHome ? '' : ' 4px solid rgb(29, 155, 240)' }} >Following</span></div>
         </div>
       </section>
-
       <TweetBox />
 
       <Feeds show={showHome}/>
+
 
     </div>
   )
