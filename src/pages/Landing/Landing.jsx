@@ -14,8 +14,6 @@ import LoopOutlinedIcon from '@mui/icons-material/LoopOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import BarChartRoundedIcon from '@mui/icons-material/BarChartRounded';
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
-
-
 export default function Landing() {
     return (
         <>

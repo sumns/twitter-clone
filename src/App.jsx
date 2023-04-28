@@ -1,22 +1,38 @@
 
+import React from 'react'
+
 import './App.css'
+import SideNavbar from './components/Sidebar/sideNavbar'
+// import Feed from './components/Sidebar/Feed'
+
+// import Landing, { LandingFooter } from './pages/Landing/Landing'
+// import Login from './pages/Login/Login'
+// import SignUp from './pages/SignUp/SignUp'
+import RigthSide from './components/RightSidebar/RigthSide';
 import Home from './pages/Home/Home'
-import Landing, { LandingFooter } from './pages/Landing/Landing'
 
 function App() {
 
   return (
-    <>
-      {/* <div className='main_background' >
-      <Landing />
-      
-      </div>
-      <LandingFooter/> */}
 
-      <Home/>
+    <>
+
+      <div className='main_background' >
+        <SideNavbar />
+        <Home />
+        <RigthSide />
+        {/* <Landing />
+        <Login />
+        <SideNavbar />
+        <SignUp /> */}
+      </div>
+      {/* <LandingFooter /> */}
+
+
 
     </>
-  )
+  );
+
 }
 
-export default App
+export default App;

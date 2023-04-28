@@ -1,0 +1,128 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+   
+}
+.body1{
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    width: 100%;   
+}
+.main{
+    position: relative;
+    width: 500px;
+    height:550px;
+    background: white;
+    border-radius: 18px;   
+}
+.container img{
+    margin-left:15rem;
+    margin-top: 2rem;
+}
+.container h4{
+    margin-left:12rem;
+    margin-top: 2rem;
+    font-size: 20px;
+}
+ .google{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 95%;
+    margin-left: 10px;
+    margin-top: 20px;
+     height: 7vh; 
+     font-size: 15px;
+    cursor: pointer;
+} 
+.apple{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 95%;
+    margin-left: 10px;
+    margin-top: 20px;
+     height: 7vh; 
+     font-size: 15px;
+    cursor: pointer;
+
+}
+.Formfiled{
+    text-align: center;  
+}
+.text{
+    width: 95%;
+    border-radius:10px ;
+    font-size: 15px;
+    height: 7vh; 
+}
+.move{
+    border-radius: 10px;
+    width: 95%;
+    margin-left: 10px;
+    margin-top: 20px;
+     height: 7vh; 
+     font-size: 15px;
+    cursor: pointer;
+
+}
+.pass{
+border-radius: 10px;
+width: 95%;
+margin-left: 10px;
+margin-top: 20px;
+ height: 7vh; 
+ font-size: 15px;
+cursor: pointer;
+}
+.span1{
+    margin-left:5rem;
+    text-align: center;
+    text-decoration: underline;
+   padding: 20px;
+}
+.para{
+    text-align: center;
+    margin-top: 5px; 
+    cursor: pointer;
+}
+.anotherPage{
+border-radius: 10px;
+width: 95%;
+margin-left: 10px;
+margin-top:10rem;
+ height: 7vh; 
+ font-size: 15px;
+cursor: pointer;
+background-color: black;
+color: whitesmoke;
+
+}
+.email{
+border-radius: 10px;
+width: 95%;
+margin-left: 20px; 
+height: 10vh; 
+font-size: 15px; 
+cursor: pointer; 
+gap: 20px;
+}
+.heading{
+    text-align: center;
+    margin-top: 20px;
+}
+.anotherpaas{
+border-radius: 20px;
+width: 95%;
+height: 10vh; 
+ font-size: 15px;
+cursor: pointer;
+
+}
