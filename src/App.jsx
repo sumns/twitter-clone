@@ -9,7 +9,7 @@ import SideNavbar from './components/Sidebar/sideNavbar'
 
 // import Feed from './components/Sidebar/Feed'
 
-
+import Signup from './pages/SignUp/Signup'
 import RigthSide from './components/RightSidebar/RigthSide';
 import Home from './pages/Home/Home'
 
@@ -20,11 +20,11 @@ function App() {
     <>
 
       <div className='main_background' >
-        {/* <SignUp /> */}
+        {/* <Signup /> */}
 
-        <SideNavbar />
+        {/* <SideNavbar /> */}
         <Home />
-        <RigthSide />
+        {/* <RigthSide /> */}
 
 
         {/* <Login /> */}

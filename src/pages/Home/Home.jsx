@@ -19,6 +19,7 @@ export default function Home() {
           <div onClick={()=> setShowHome(false)} ><span style={{ borderBottom: showHome ? '' : ' 4px solid rgb(29, 155, 240)' }} >Following</span></div>
         </div>
       </section>
+      
       <TweetBox />
 
       <Feeds show={showHome}/>
