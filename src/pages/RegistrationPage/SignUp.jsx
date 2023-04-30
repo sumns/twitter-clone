@@ -39,6 +39,7 @@ export default function SignUp(){
 
   const pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
   const pattern1=/^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).*$/;
+
   function isEmail(str) {
     return str.match(pattern);
   }
@@ -83,7 +84,6 @@ export default function SignUp(){
 
       const updatedUsers = [...oldData, newUser]
       localStorage.setItem("userData", JSON.stringify(updatedUsers))
-      // localStorage.setItem("currentUser", JSON.stringify(newUser))
 
       navigate("/login")
     }

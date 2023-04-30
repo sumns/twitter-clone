@@ -47,8 +47,18 @@ export default function AccountMenu() {
 
             sx={{display: 'flex', alignItems: 'center'}}
           >
-            <Avatar  sx={{ width: 32, height: 32, backgroundColor: '#1da1f2' }}>{ JSON.parse(localStorage.getItem('currentUser')).name.slice(0,1) }</Avatar>
-            <Typography sx={{ minWidth: 100, color: 'black' }}>{ JSON.parse(localStorage.getItem('currentUser')).name }</Typography>
+            <Avatar  sx={{ width: 32, height: 32, backgroundColor: '#1da1f2' }}>
+              { 
+                JSON.parse(localStorage.getItem('currentUser')) ? 
+                JSON.parse(localStorage.getItem('currentUser')).name.slice(0,1) : '' 
+              }
+            </Avatar>
+            <Typography sx={{ minWidth: 100, color: 'black' }}>
+              { 
+                JSON.parse(localStorage.getItem('currentUser')) ?
+                JSON.parse(localStorage.getItem('currentUser')).name : '' 
+              }
+              </Typography>
             <Typography><MoreHorizIcon/></Typography>
           </IconButton>
           
