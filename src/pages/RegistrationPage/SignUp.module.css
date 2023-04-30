@@ -20,3 +20,20 @@
   margin-left:3rem;
 }
 
+.signUp_btn{
+    outline: none;
+    border: none;
+
+    border: 1px solid white;
+    border-radius: 23px;
+    font-weight: bold;
+    font-size: 15px;
+
+    padding: 10px 20px;
+    margin-left: 20px;
+}
+.signUp_btn:hover{
+  background-color:rgb(221, 221, 221);
+  cursor: pointer;
+}
+

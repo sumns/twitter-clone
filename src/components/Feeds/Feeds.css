@@ -14,7 +14,12 @@
 }
 
 .feeds_main_container > div{
-    margin-right: 10px;
+    /* margin-right: 10px; */
+    width: 10%;
+}
+
+.feeds_content_section{
+    width: 90%;
 }
 
 .feeds_content_header{
@@ -26,9 +31,12 @@
     align-items: center;
 }
 
+.feeds_content_body{
+    margin-bottom: 20px;
+}
 
 .feeds_content_imgDiv{
-    margin: 20px 0;
+    margin-bottom: 20px ;
 
     height: 70vh;
     width: 100%;

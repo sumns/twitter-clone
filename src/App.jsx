@@ -1,17 +1,12 @@
 
 import React from 'react'
 import './App.css'
-import Landing, {LandingFooter} from './pages/Landing/Landing'
+
 import Login from './pages/Login/Login'
-
-import SideNavbar from './components/Sidebar/sideNavbar'
-
-
-// import Feed from './components/Sidebar/Feed'
-
 import Signup from './pages/SignUp/Signup'
-import RigthSide from './components/RightSidebar/RigthSide';
+
 import Home from './pages/Home/Home'
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
 
@@ -19,19 +14,11 @@ function App() {
 
     <>
 
-      <div className='main_background' >
-        {/* <Signup /> */}
-
-        {/* <SideNavbar /> */}
-        <Home />
-        {/* <RigthSide /> */}
-
-
-        {/* <Login /> */}
-
-      </div>
-
-
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/login' element={<Login />} />
+      </Routes>
 
     </>
   );
@@ -39,3 +26,16 @@ function App() {
 }
 
 export default App;
+
+
+
+// Test Cases :-
+
+// 1. Home page Protected
+// 2. Sign up Validation 
+// 3. Tweet
+// 4. Logout
+// 5. Right - not interested
+// 6. Right - show more
+// 7. Responsive
+// 8. Personal profile data

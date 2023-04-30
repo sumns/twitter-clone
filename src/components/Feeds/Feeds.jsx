@@ -9,11 +9,14 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 import BarChartRoundedIcon from '@mui/icons-material/BarChartRounded';
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
 
+import { useRecoilState } from 'recoil';
+import { reRender } from '../../atoms/reRender';
 
 export default function Feeds({ show }) {
 
     const [likeCount, setLikeCount] = useState(0)
     const [feedCount, setFeedCount] = useState(10)
+    const [atomRerender, setAtomRerender]=useRecoilState(reRender)
 
     function handleLikeClick(elem) {
         if (elem.isLiked === true) {
@@ -26,7 +29,7 @@ export default function Feeds({ show }) {
             setLikeCount(elem.likeCount)
         }
 
-        // console.log(elem.isLiked);
+        // console.log(elem);
     }
 
     return (
@@ -35,6 +38,49 @@ export default function Feeds({ show }) {
             {
                 show ? (
                     <div>
+                        
+                        {     
+                            JSON.parse(localStorage.getItem('userTweetList'))  ? 
+                            (
+                                JSON.parse(localStorage.getItem('userTweetList')).map((elem, i) => {
+                                    return (
+                                        <div className='feeds_main_container' key={i}>
+                                            <div>
+                                                <Avatar alt="Remy Sharp" src="" />
+                                            </div>
+                                            <section className='feeds_content_section' >
+                                                <div className='feeds_content_header'>
+                                                    <div>
+                                                        <b>{JSON.parse(localStorage.getItem('currentUser')).name}</b> <VerifiedIcon fontSize='small' htmlColor='#2196f3' /> &nbsp; @{JSON.parse(localStorage.getItem('currentUser')).name} 
+                                                    </div>
+                                                    <div><MoreHorizIcon /></div>
+                                                </div>
+    
+                                                <div className='feeds_content_body' >
+                                                    <p>{elem.content}</p>
+                                                </div>
+    
+                                                {/* <div className='feeds_content_imgDiv' >
+                                                    <img src={elem.image} alt="" />
+                                                </div> */}
+    
+                                                <div className='feeds_content_activity' >
+                                                <p><ChatBubbleOutlineOutlinedIcon /><span>{elem.commentCount}</span></p>
+                                                    <p><LoopOutlinedIcon /><span>{elem.reTweetsCount}</span></p>
+                                                    <p onClick={() => handleLikeClick(elem)} >
+                                                        <FavoriteBorderOutlinedIcon htmlColor={elem.isLiked ? 'red' : ""} />
+                                                        <span>{elem.likeCount}</span>
+                                                    </p>
+                                                    <p><BarChartRoundedIcon /><span>1</span></p>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    )
+                                })
+                            )     : ''             
+                            
+                        }
+
                         {
                             TweetsData.filter((e, i) => i < feedCount).map((elem, i) => {
                                 return (
@@ -45,16 +91,20 @@ export default function Feeds({ show }) {
                                         <section className='feeds_content_section' >
                                             <div className='feeds_content_header'>
                                                 <div>
-                                                    <b>{elem.tweetedBy.name}</b> <VerifiedIcon fontSize='small' htmlColor='#2196f3' /> &nbsp; @{elem.tweetedBy.name} . 15h
+                                                <b>{elem.tweetedBy.name}</b> <VerifiedIcon fontSize='small' htmlColor='#2196f3' /> &nbsp; @{elem.tweetedBy.name} . 15h
                                                 </div>
                                                 <div><MoreHorizIcon /></div>
                                             </div>
+
+
                                             <div className='feeds_content_body' >
                                                 <p>{elem.content}</p>
                                             </div>
+
                                             <div className='feeds_content_imgDiv' >
                                                 <img src={elem.image} alt="" />
                                             </div>
+
                                             <div className='feeds_content_activity' >
                                                 <p><ChatBubbleOutlineOutlinedIcon /><span>{elem.commentCount}</span></p>
                                                 <p><LoopOutlinedIcon /><span>{elem.reTweetsCount}</span></p>

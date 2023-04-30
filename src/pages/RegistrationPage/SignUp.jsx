@@ -8,7 +8,7 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 // import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from "@mui/material/DialogTitle";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import FormControl from '@mui/material/FormControl';
 import Box from '@mui/material/Box';
 import InputLabel from "@mui/material/InputLabel";
@@ -17,8 +17,12 @@ import Select from "@mui/material/Select";
 import { months } from "./Data";
 import style from "./SignUp.module.css"
 import { FaTwitter } from 'react-icons/fa';
+import { userDetails } from "../../atoms/userDetails";
+import { useSetRecoilState } from "recoil";
+
+
 export default function SignUp(){
-  const [open, setOpen] =useState(false);
+  const [open, setOpen] =useState(true);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -28,9 +32,10 @@ export default function SignUp(){
   const [errortxt, setErrorTxt] = useState("")
 
   // const[users,setUsers]=useState([])
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
   const oldData = JSON.parse(localStorage.getItem("userData")) || []
 
+  const setAtomUserDetails = useSetRecoilState(userDetails)
 
   const pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
   function isEmail(str) {
@@ -74,8 +79,9 @@ export default function SignUp(){
 
       const updatedUsers = [...oldData, newUser]
       localStorage.setItem("userData", JSON.stringify(updatedUsers))
+      localStorage.setItem("currentUser", JSON.stringify(newUser))
 
-      // navigate("./")
+      navigate("/login")
     }
   }
 
@@ -302,9 +308,9 @@ export default function SignUp(){
         </div>
       </Dialog>
 
-      <Button variant="contained" onClick={handleClickOpen}>
+      <button  onClick={handleClickOpen} className={style.signUp_btn} >
         SignUp
-      </Button>
+      </button>
     </div>
   );
 };

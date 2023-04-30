@@ -11,10 +11,9 @@ import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import Button from '@mui/material/Button'
 
-import SidebarOptions from './SidebarOptions';
-
-import TweetDialogue from './TweetDialogue'
-
+import SidebarOptions from './SidebarOptions/SidebarOptions';
+import TweetDialogue from './TweetDialog/TweetDialogue'
+import UserLogout from './UserLogout/UserLogout'
 
 export default function SideNavbar() {
   const [open, setOpen] = React.useState(false);
@@ -24,57 +23,66 @@ export default function SideNavbar() {
   };
 
   const handleClose = () => {
-    setOpen(false);
+    setOpen(false); 
   };
   return (
     <div className='sidebar'>
       <div>
-        
-      <TwitterIcon 
+
+        <TwitterIcon
           className='sidebar_twitterIcon'
         />
-        
 
-        <SidebarOptions 
+
+        <SidebarOptions
           Icon={HomeIcon}
-          text = "Home"
+          text="Home"
+          path='/'
         />
-        <SidebarOptions 
+        <SidebarOptions
           Icon={TagIcon}
-          text = "Explore"
+          text="Explore"
+          path='/explore'
         />
-        <SidebarOptions 
+        <SidebarOptions
           Icon={NotificationsIcon}
-          text = "Notifications"
+          text="Notifications"
+          path='/notifications'
         />
-        <SidebarOptions 
+        <SidebarOptions
           Icon={MailIcon}
-          text = "Message"
+          text="Message"
+          path='/message'
         />
-        <SidebarOptions 
+        <SidebarOptions
           Icon={BookmarkBorderIcon}
-          text = "Bookmarks"
+          text="Bookmarks"
         />
-        <SidebarOptions 
+        <SidebarOptions
           Icon={ContactEmergencyIcon}
-          text = "Twitter Blue"
+          text="Twitter Blue"
+          path='/twitter-blue'
         />
-        <SidebarOptions 
+        <SidebarOptions
           Icon={PermIdentityIcon}
-          text = "Profile"
+          text="Profile"
+          path='/profile'
         />
-        <SidebarOptions 
+        <SidebarOptions
           Icon={MoreHorizIcon}
-          text = "More"
+          text="More"
         />
 
 
-      {/* <button>Tweet</button> */}
-      <Button className='sidebar_tweet' variant="outlined" onClick={handleClickOpen}>Tweet</Button>
-      {
-        open ? <TweetDialogue  open = {open} handleClose={handleClose}/> : ""
-      }
-    </div>
+        {/* <button>Tweet</button> */}
+        <Button className='sidebar_tweet' variant="outlined" onClick={handleClickOpen}>Tweet</Button>
+        {
+          open ? <TweetDialogue open={open} handleClose={handleClose} /> : ""
+        }
+
+        <UserLogout/>
+ 
+      </div>
 
     </div>
   )

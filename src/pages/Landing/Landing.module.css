@@ -74,10 +74,14 @@
     width: 32%;
     padding: 0 30px;
 }
-.landing_widget > div{
+.landing_widget > div:nth-child(1) { 
     border: 1px solid rgb(205, 205, 205);
     border-radius: 13px;
     padding: 12px 20px;
+}
+.landing_widget > div:nth-child(2){
+    padding: 20px 20px;
+    font-size: 13px;
 }
 .landing_widget > div > p{
     font-size: 13px;
@@ -108,19 +112,26 @@
 .landing_footer > div{
     color: white;
 }
-.landing_footer > div > button{
+.login_btn{
     outline: none;
     border: none;
 
-    border: 1px solid white;
+    border: 0.5px solid white;
     border-radius: 23px;
     font-weight: bold;
     font-size: 15px;
 
     padding: 10px 20px;
     margin-left: 20px;
-}
-.landing_footer > div > button:nth-child(1){
+
     background: transparent;
     color: white;
+}
+.login_btn:hover{
+    background-color: rgb(48, 162, 238);
+    cursor: pointer;
+}
+
+.landing_footer > div:nth-child(2){
+    display: flex;
 }

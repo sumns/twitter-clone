@@ -1,6 +1,7 @@
 import React from 'react'
 import land from './Landing.module.css';
 import SignUp from '../RegistrationPage/SignUp';
+
 import Avatar from '@mui/material/Avatar';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import TagIcon from '@mui/icons-material/Tag';
@@ -14,6 +15,10 @@ import LoopOutlinedIcon from '@mui/icons-material/LoopOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import BarChartRoundedIcon from '@mui/icons-material/BarChartRounded';
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
+
+import { Link } from 'react-router-dom';
+import RightLast from '../../components/RightSidebar/RightLast/RightLast';
+
 export default function Landing() {
     return (
         <>
@@ -89,6 +94,7 @@ export default function Landing() {
                         <AppleBtn />
                         <p>By signing up, you agree to the <span>Terms of Service</span> and <span>Privacy Policy</span>, including <span>Cookie Use</span>.</p>
                     </div>
+                    <RightLast/>
                 </section>
 
             </div>
@@ -109,8 +115,8 @@ export function LandingFooter() {
                 <p>People on Twitter are the first to know.</p>
             </div>
             <div>
-                <button>Log in</button>
-                <SignUp/>
+                <Link to='/login'><button className={land.login_btn}>Log in</button></Link>
+                <Link to='/signup'><SignUp/></Link>
             </div>
         </ section >
 

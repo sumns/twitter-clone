@@ -3,22 +3,59 @@ import { FaApple } from 'react-icons/fa';
 import { FcGoogle, } from "react-icons/fc";
 import TextField from '@mui/material/TextField';
 import Log from './Login.module.css'
+import Divider from '@mui/material/Divider';
+import { Link, useNavigate } from 'react-router-dom';
+
+// import { isUserLoggedIn } from '../../atoms/isUserLoggedIn'
+// import { useSetRecoilState } from 'recoil'
 
 export default function Login() {
   const [Logindata, setLogindata] = useState('');
+  const [userPass, setUserPass] = useState('')
   const [userList, setUserList] = useState([]);
   const [showdata, setShowdata] = useState(false);
-  function handleSubmit(e) {
-    e.preventDefault();
-    // add relevant code here
-  }
+  const navigate = useNavigate()
+
+  // const setUserLoggedIn = useSetRecoilState(isUserLoggedIn)
 
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem('user'));
+    const data = JSON.parse(localStorage.getItem('userData'));
     setUserList(data);
+
+    localStorage.setItem('isUserLoggedIn', JSON.stringify(false))
+
   }, []);
 
   console.log(userList)
+
+  function handleEmailSubmit(e) {
+    e.preventDefault();
+    // add relevant code here
+    const matchedUserEmail = userList.find(user => user.email === Logindata)
+    if (!matchedUserEmail) {
+      alert('email not registered.')
+    }
+    else {
+      setShowdata(true)
+    }
+  }
+
+  function handlePassSubmit(e) {
+    e.preventDefault();
+
+    const matchedUserPass = userList.find(user => user.password === userPass)
+    if (!matchedUserPass) {
+      alert('Password not matched!')
+    }
+    else {
+      // setShowdata(true)
+      alert("login successfull!")
+      // setUserLoggedIn(true)
+      localStorage.setItem('isUserLoggedIn', JSON.stringify(true))
+      navigate('/')
+    }
+
+  }
 
   return (
     <div className={Log.body1}>
@@ -37,12 +74,13 @@ export default function Login() {
               </button>
               <br />
               <button className={Log.apple}>
-                <FaApple size={25} color='lightCoral' /> Sign In with Apple
+                <FaApple size={25} /> Sign In with Apple
               </button>
               <br />
-              <p className={Log.para}>_________________________or________________________</p>
+              <p className={Log.para}>__________________or_________________</p>
+              {/* <Divider>or</Divider> */}
               <br />
-              <form onSubmit={handleSubmit} className={Log.Formfiled}>
+              <form onSubmit={handleEmailSubmit} className={Log.Formfiled}>
                 <input
                   type='text'
                   value={Logindata}
@@ -51,9 +89,10 @@ export default function Login() {
                 />
                 <br />
 
+
+                <button type='submit' className={Log.move}>Next</button>
+                <br />
               </form>
-              <button onClick={() => setShowdata(true)} className={Log.move}>Next</button>
-              <br />
               <button className={Log.pass}>Forgot password?</button>
               <br />
             </>
@@ -68,20 +107,25 @@ export default function Login() {
               />
               <br />
               <br />
-              <TextField className={Log.anotherpaas}
-                id='filled-password-input'
-                label='Password'
-                type='password'
-                autoComplete='current-password'
-                variant='outlined'
-              />
-              <br />
-              <button className={Log.anotherPage}>Login</button>
+              <form onSubmit={handlePassSubmit} className={Log.Formfiled}>
+                <TextField className={Log.anotherpaas}
+                  id='filled-password-input'
+                  label='Password'
+                  type='password'
+                  autoComplete='current-password'
+                  variant='outlined'
+                  value={userPass}
+                  onChange={(e)=> setUserPass(e.target.value)}
+                />
+                <br />
+                <button type='submit' className={Log.anotherPage}>Login</button>
+              </form>
 
             </>
           )}
           <br />
-          <span className={Log.span1}>Do you have an account? Sign Up</span>
+
+          <Link to='/signup'><span className={Log.span1}>Do you have an account? Sign Up</span></Link>
         </div>
       </div>
     </div>
