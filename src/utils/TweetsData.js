@@ -8,7 +8,7 @@ export const TweetsData = [
         "id": "eead1d48-1586-44d7-8bf8-ff076d6ee35e",
         "name": "Caroline Gleichner"
       },
-      "likeCount": 576,
+      "likeCount": 576, 
       "commentCount": 577,
       "reTweetsCount": 174,
       "isLiked": true

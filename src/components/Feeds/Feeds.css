@@ -48,7 +48,7 @@
 }
 .feeds_content_activity{
     width: 80%;
-    height: ;
+    /* height: ; */
     display: flex;
     justify-content: space-between;
 }

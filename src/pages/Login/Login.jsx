@@ -51,7 +51,13 @@ export default function Login() {
       // setShowdata(true)
       alert("login successfull!")
       // setUserLoggedIn(true)
-      localStorage.setItem('isUserLoggedIn', JSON.stringify(true))
+      localStorage.setItem('isUserLoggedIn', JSON.stringify(true)) 
+
+
+      const curUser = JSON.parse(localStorage.getItem('userData')).filter(user => user.email === Logindata);
+
+      localStorage.setItem('currentUser', JSON.stringify(...curUser));
+      // console.log(curUser);
       navigate('/')
     }
 

@@ -79,7 +79,7 @@ export default function SignUp(){
 
       const updatedUsers = [...oldData, newUser]
       localStorage.setItem("userData", JSON.stringify(updatedUsers))
-      localStorage.setItem("currentUser", JSON.stringify(newUser))
+      // localStorage.setItem("currentUser", JSON.stringify(newUser))
 
       navigate("/login")
     }
