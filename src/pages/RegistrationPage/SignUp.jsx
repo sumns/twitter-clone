@@ -38,8 +38,13 @@ export default function SignUp(){
   const setAtomUserDetails = useSetRecoilState(userDetails)
 
   const pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  const pattern1=/^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).*$/;
+
   function isEmail(str) {
     return str.match(pattern);
+  }
+  function isPassword(str1){
+    return str1.match(pattern1)
   }
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -52,9 +57,9 @@ export default function SignUp(){
     } else if (isEmail(email) === null) {
       setError(true)
       setErrorTxt("*Invalid email")
-    } else if (password.length < 6) {
+    } else if (isPassword(password)===null) {
       setError(true)
-      setErrorTxt("*Password should be atleast 6 characters")
+      setErrorTxt("*Password must be one character capital and special character")
     }
     else if (oldData.find((val) => val.email === email)) {
       setError(true)
@@ -79,7 +84,6 @@ export default function SignUp(){
 
       const updatedUsers = [...oldData, newUser]
       localStorage.setItem("userData", JSON.stringify(updatedUsers))
-      // localStorage.setItem("currentUser", JSON.stringify(newUser))
 
       navigate("/login")
     }
