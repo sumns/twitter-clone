@@ -1,51 +1,70 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Right from './RightSide.module.css';
 import RightLast from './RightLast/RightLast';
 import SearchBar from './SearchBar/SearchBar';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import WhoToFollow from './WhoToFollow/WhoToFollow';
 
+export default function RightSide() {
+  const [notInterested, setNotInterested] = useState([]);
+  const [selectedItem, setSelectedItem] = useState(null);
 
-export default function RigthSide() {
   const data = [
     {
+      id: 1,
       Trending: "Trending In India",
       name: "#Virat Kohli",
       Tweets: "9,565 tweets"
     },
     {
-      Trending: "Bsuiness and finance Trending",
+      id: 2,
+      Trending: "Business and finance Trending",
       name: "#InvestigateAGIgreenpac",
       Tweets: "2,014 Tweets"
     },
     {
+      id: 3,
       Trending: "Entertainment -Trending",
       name: "#SSMB28",
       Tweets: "16.9K Tweets"
     },
     {
+      id: 4,
       Trending: "Trending In India",
       name: "#delhimetro",
       Tweets: "1,667 Tweets"
     }
   ];
 
-  return (
+  const handleNotInterested = (id) => {
+    setNotInterested([...notInterested, id]);
+  };
 
+  const filteredData = data.filter((item) => !notInterested.includes(item.id));
+
+  return (
     <div className={Right.start}>
       <div>
         <SearchBar />
         <section className={Right.firstComp}>
           <div className={Right.firstcontainer}>
-          <h2>What's Happening</h2>
+            <h2>Whats Happening</h2>
           </div>
           <div className={Right.datapart}>
-            {data.map((wid, ind) => (
+            {filteredData.map((wid, ind) => (
               <div key={ind}>
                 <ul>
-                  <li style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}><span>{wid.Trending}</span><p><MoreHorizIcon /></p></li>
+                  <li style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <span>{wid.Trending}</span>
+                    <p><MoreHorizIcon onClick={() => setSelectedItem(ind)} /></p>
+                    <div>
+                      {selectedItem === ind && (
+                        <span onClick={() => handleNotInterested(wid.id)} className={Right.not_intrested}>Not interested</span>
+                      )}
+                    </div>
+                  </li>
                   <li>{wid.name}</li>
-                  <li>{wid.Tweets}</li> 
+                  <li>{wid.Tweets}</li>
                 </ul>
               </div>
             ))}
@@ -57,9 +76,9 @@ export default function RigthSide() {
         <div>
           <WhoToFollow />
         </div>
-       <div>
+        <div>
           <RightLast />
-        </div> 
+        </div>
       </div>
     </div>
   );
