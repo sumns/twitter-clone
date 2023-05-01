@@ -1,6 +1,6 @@
-import React from 'react'
-import './SidebarOptions.css'
-import { Link } from 'react-router-dom'
+import React from "react";
+import "./SidebarOptions.css";
+import { Link } from "react-router-dom";
 
 export default function SidebarOptions({ text, Icon, path }) {
   return (
@@ -10,5 +10,5 @@ export default function SidebarOptions({ text, Icon, path }) {
         <h2>{text}</h2>
       </Link>
     </div>
-  )
+  );
 }
