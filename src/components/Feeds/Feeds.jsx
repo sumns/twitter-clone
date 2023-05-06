@@ -51,7 +51,9 @@ export default function Feeds({ show }) {
                                             <section className='feeds_content_section' >
                                                 <div className='feeds_content_header'>
                                                     <div>
-                                                        <b>{JSON.parse(localStorage.getItem('currentUser')).name}</b> <VerifiedIcon fontSize='small' htmlColor='#2196f3' /> &nbsp; @{JSON.parse(localStorage.getItem('currentUser')).name} 
+                                                        <b>{JSON.parse(localStorage.getItem('currentUser')).name}</b> 
+                                                        <VerifiedIcon fontSize='small' htmlColor='#2196f3' /> 
+                                                        &nbsp; @{JSON.parse(localStorage.getItem('currentUser')).name} 
                                                     </div>
                                                     <div><MoreHorizIcon /></div>
                                                 </div>

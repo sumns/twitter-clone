@@ -5,41 +5,49 @@ import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 
-import { reRender } from '../../../atoms/reRender';
-import { useRecoilState } from 'recoil';
+import CropOriginalIcon from "@mui/icons-material/CropOriginal";
+import GifBoxIcon from "@mui/icons-material/GifBox";
+import PollIcon from "@mui/icons-material/Poll";
+import MoodIcon from "@mui/icons-material/Mood";
+import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+// import PublicIcon from '@mui/icons-material/Public';
 
+import { reRender } from "../../../atoms/reRender";
+import { useRecoilState } from "recoil";
 
 import "./TweetDialogue.css";
 
+import TweetOptions from "../TweetBox/TweetOptions"
+
 export default function FormDialog({ open, handleClose }) {
+  const [userTweet, setuserTweet] = React.useState("");
 
-  const [userTweet, setuserTweet] = React.useState('')
-
-  const [atomRerender, setAtomRerender]=useRecoilState(reRender)
+  const [atomRerender, setAtomRerender] = useRecoilState(reRender);
 
   function handleTweetClick() {
     const newTweet = {
-      'content': userTweet,
-      "likeCount": 0,
-      "commentCount": 0,
-      "reTweetsCount": 0,
-      "isLiked": false
+      content: userTweet,
+      likeCount: 0,
+      commentCount: 0,
+      reTweetsCount: 0,
+      isLiked: false,
+    };
+
+    const oldTweetList = JSON.parse(localStorage.getItem("userTweetList"));
+
+    if (oldTweetList) {
+      localStorage.setItem(
+        "userTweetList",
+        JSON.stringify([newTweet, ...oldTweetList])
+      );
+    } else {
+      localStorage.setItem("userTweetList", JSON.stringify([newTweet]));
     }
 
-
-    const oldTweetList = JSON.parse(localStorage.getItem('userTweetList'))
-
-    if(oldTweetList){
-      localStorage.setItem('userTweetList', JSON.stringify([newTweet, ...oldTweetList ]) )
-    }
-    else{
-      localStorage.setItem('userTweetList', JSON.stringify([newTweet]) )
-    }
-    
-    setuserTweet('')
-    handleClose()
-    setAtomRerender(!atomRerender)
-
+    setuserTweet("");
+    handleClose();
+    setAtomRerender(!atomRerender);
   }
 
   return (
@@ -60,10 +68,27 @@ export default function FormDialog({ open, handleClose }) {
               className="tweetBoxInput"
               placeholder="What's happenig?"
               value={userTweet}
-              onChange={(e)=> setuserTweet(e.target.value) }
+              onChange={(e) => setuserTweet(e.target.value)}
             />
           </div>
         </DialogContent>
+
+        {/* <div className="everyOne">
+          <p> <span><PublicIcon/></span> Everyone can reply</p>
+        </div> */}
+
+        <TweetOptions/>
+
+<hr />
+        <div className="tweet-icons">
+          <CropOriginalIcon />
+          <GifBoxIcon />
+          <PollIcon />
+          <MoodIcon />
+          <WorkHistoryIcon />
+          <LocationOnIcon />
+        </div>
+
         <DialogActions>
           <Button onClick={handleTweetClick}>Tweet</Button>
         </DialogActions>

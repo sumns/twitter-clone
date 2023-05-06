@@ -1,58 +1,90 @@
-import React, { useEffect, useState } from 'react'
-import "./TweetBox.css"
-import { Button } from '@mui/base';
-import { reRender } from '../../../atoms/reRender';
-import { useRecoilState } from 'recoil';
+import React, { useEffect, useState } from "react";
+import "./TweetBox.css";
+import { Button } from "@mui/base";
+import { reRender } from "../../../atoms/reRender";
+import { useRecoilState } from "recoil";
+
+import CropOriginalIcon from "@mui/icons-material/CropOriginal";
+import GifBoxIcon from "@mui/icons-material/GifBox";
+import PollIcon from "@mui/icons-material/Poll";
+import MoodIcon from "@mui/icons-material/Mood";
+import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+// import PublicIcon from '@mui/icons-material/Public';
+
+import TweetOptions from "./TweetOptions"
 
 function TweetBox() {
+  const [userTweet, setuserTweet] = useState("");
 
-  const [userTweet, setuserTweet] = useState('')
-
-  const [atomRerender, setAtomRerender]=useRecoilState(reRender)
+  const [atomRerender, setAtomRerender] = useRecoilState(reRender);
 
   function handleTweetClick() {
     const newTweet = {
-      'content': userTweet,
-      "likeCount": 0,
-      "commentCount": 0,
-      "reTweetsCount": 0,
-      "isLiked": false
+      content: userTweet,
+      likeCount: 0,
+      commentCount: 0,
+      reTweetsCount: 0,
+      isLiked: false,
+    };
+
+    const oldTweetList = JSON.parse(localStorage.getItem("userTweetList"));
+
+    if (oldTweetList) {
+      localStorage.setItem(
+        "userTweetList",
+        JSON.stringify([newTweet, ...oldTweetList])
+      );
+    } else {
+      localStorage.setItem("userTweetList", JSON.stringify([newTweet]));
     }
 
+    setuserTweet("");
 
-    const oldTweetList = JSON.parse(localStorage.getItem('userTweetList'))
-
-    if(oldTweetList){
-      localStorage.setItem('userTweetList', JSON.stringify([newTweet, ...oldTweetList ]) )
-    }
-    else{
-      localStorage.setItem('userTweetList', JSON.stringify([newTweet]) )
-    }
-    
-    setuserTweet('')
-    
-    setAtomRerender(!atomRerender)
+    setAtomRerender(!atomRerender);
   }
 
   return (
-    <div className='tweetBox'>
-        <form >
-            <div className='tweetBox_input'>
-                 <img src="https://img.freepik.com/premium-vector/businessman-avatar-cartoon-character-profile_18591-50581.jpg"  />
+    <div className="tweetBox">
+      <form>
+        <div className="tweetBox_input">
+          <img src="https://img.freepik.com/premium-vector/businessman-avatar-cartoon-character-profile_18591-50581.jpg" />
 
-                <textarea type="text"
-                    className='tweetBox_imageInput'
-                    placeholder="What's happenig?"
-                    value={userTweet}
-                    onChange={(e)=> setuserTweet(e.target.value) }
-                />
+          <textarea
+            type="text"
+            className="tweetBox_imageInput"
+            placeholder="What's happenig?"
+            value={userTweet}
+            onChange={(e) => setuserTweet(e.target.value)}
+          />
 
-                <Button onClick={handleTweetClick} className="tweetBox_tweetButton">Tweet</Button>
+        {/* <div className="everyOne">
+          <p> <span></span> Everyone can reply</p>
+        </div> */}
+        <TweetOptions/>
+
+        <hr />
+
+          <div className="Main-tweet">
+            
+            <div className="tweet-conte">
+              <CropOriginalIcon />
+              <GifBoxIcon />
+              <PollIcon />
+              <MoodIcon />
+              <WorkHistoryIcon />
+              <LocationOnIcon />
             </div>
-        </form>
 
+
+            <Button onClick={handleTweetClick} className="tweetBox_tweetButton">
+              Tweet
+            </Button>
+          </div>
+        </div>
+      </form>
     </div>
-  )
+  );
 }
 
-export default TweetBox
+export default TweetBox;
