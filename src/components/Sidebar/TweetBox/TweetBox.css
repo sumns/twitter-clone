@@ -3,19 +3,23 @@
     border-bottom: 1px solid gray;
     /* padding-right: 10px; */
 }
-tweetBox_input
-.tweetBox > form {
+
+.tweetBox  form {
     display: flex;
     flex-direction: column;
 }
 
 .tweetBox_input{
     padding: 20px;
-    /* display: flex; */
+    display: flex;
     align-items: center;
+
+}
+.tweetBox_input > div{
+    width: 90%;
 }
 
-.tweetBox_input > textarea {
+.tweetBox_input  textarea {
     margin-left: 20px;
     font-size: 20px;
     border: none;
@@ -26,7 +30,7 @@ tweetBox_input
 textarea::-webkit-scrollbar{
     display: none;
 }
-.tweetBox_input > textarea::placeholder {
+.tweetBox_input  textarea::placeholder {
     color: #1c3242;
     font-size: 1.2em;
     font-style: italic;
@@ -57,7 +61,8 @@ textarea::-webkit-scrollbar{
     margin-left: auto !important;
 }
 
-.tweetBox_input > img{
+.tweetBox_input  img{
+    
     height: 50px;
     width: 50px;
 }

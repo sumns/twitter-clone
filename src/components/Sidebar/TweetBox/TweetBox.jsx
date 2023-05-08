@@ -12,7 +12,7 @@ import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 // import PublicIcon from '@mui/icons-material/Public';
 
-import TweetOptions from "./TweetOptions"
+import TweetOptions from "./TweetOptions";
 
 function TweetBox() {
   const [userTweet, setuserTweet] = useState("");
@@ -50,6 +50,7 @@ function TweetBox() {
         <div className="tweetBox_input">
           <img src="https://img.freepik.com/premium-vector/businessman-avatar-cartoon-character-profile_18591-50581.jpg" />
 
+          <div>
           <textarea
             type="text"
             className="tweetBox_imageInput"
@@ -58,15 +59,12 @@ function TweetBox() {
             onChange={(e) => setuserTweet(e.target.value)}
           />
 
-        {/* <div className="everyOne">
-          <p> <span></span> Everyone can reply</p>
-        </div> */}
-        <TweetOptions/>
 
-        <hr />
+          <TweetOptions />
+
+          <hr />
 
           <div className="Main-tweet">
-            
             <div className="tweet-conte">
               <CropOriginalIcon />
               <GifBoxIcon />
@@ -76,10 +74,10 @@ function TweetBox() {
               <LocationOnIcon />
             </div>
 
-
             <Button onClick={handleTweetClick} className="tweetBox_tweetButton">
               Tweet
             </Button>
+          </div>
           </div>
         </div>
       </form>

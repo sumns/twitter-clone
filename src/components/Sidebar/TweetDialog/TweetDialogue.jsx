@@ -18,7 +18,7 @@ import { useRecoilState } from "recoil";
 
 import "./TweetDialogue.css";
 
-import TweetOptions from "../TweetBox/TweetOptions"
+import TweetOptions from "../TweetBox/TweetOptions";
 
 export default function FormDialog({ open, handleClose }) {
   const [userTweet, setuserTweet] = React.useState("");
@@ -51,47 +51,44 @@ export default function FormDialog({ open, handleClose }) {
   }
 
   return (
-    <div>
-      <Dialog open={open} onClose={handleClose}>
-        <p className="Cross" onClick={handleClose}>
+    <div >
+      <Dialog open={open} onClose={handleClose}  >
+        <p className="Cross" onClick={handleClose} >
           ❌
         </p>
         <DialogContent>
           <div style={{ display: "flex" }}>
-            <img
-              height="50px"
-              src="https://img.freepik.com/premium-vector/businessman-avatar-cartoon-character-profile_18591-50581.jpg"
-            />
+            <div className="image">
+              <img
+                height="50px"
+                src="https://img.freepik.com/premium-vector/businessman-avatar-cartoon-character-profile_18591-50581.jpg"
+              />
+            </div>
+            <div className="textArea">
+              <textarea
+                type="text"
+                className="tweetBoxInput"
+                placeholder="What's happenig?"
+                value={userTweet}
+                onChange={(e) => setuserTweet(e.target.value)}
+              />
 
-            <textarea
-              type="text"
-              className="tweetBoxInput"
-              placeholder="What's happenig?"
-              value={userTweet}
-              onChange={(e) => setuserTweet(e.target.value)}
-            />
+              <TweetOptions />
+
+              <hr />
+              <div className="tweet-icons">
+                <CropOriginalIcon />
+                <GifBoxIcon />
+                <PollIcon />
+                <MoodIcon />
+                <WorkHistoryIcon />
+                <LocationOnIcon />
+              </div>
+
+              <Button onClick={handleTweetClick}>Tweet</Button>
+            </div>
           </div>
         </DialogContent>
-
-        {/* <div className="everyOne">
-          <p> <span><PublicIcon/></span> Everyone can reply</p>
-        </div> */}
-
-        <TweetOptions/>
-
-<hr />
-        <div className="tweet-icons">
-          <CropOriginalIcon />
-          <GifBoxIcon />
-          <PollIcon />
-          <MoodIcon />
-          <WorkHistoryIcon />
-          <LocationOnIcon />
-        </div>
-
-        <DialogActions>
-          <Button onClick={handleTweetClick}>Tweet</Button>
-        </DialogActions>
       </Dialog>
     </div>
   );
